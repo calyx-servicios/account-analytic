@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_cash_close_tree" model="ir.ui.view">
+        <field name="model">account.cash.close</field>
+        <field name="arch" type="xml">
+            <tree string="Cash Close">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="manager_cash_open"/>
+                <field name="closing_cash_manager"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_account_cash_close_form" model="ir.ui.view">
+        <field name="model">account.cash.close</field>
+        <field name="arch" type="xml">
+            <form string="Type">
+                <sheet>
+                    <h1>
+                        <field name="name" readonly="1"  force_save="1"/>
+                    </h1>
+                    <field name="date" string ="Date"/>
+                    <group name="cash_close" string="Close Cash">
+                        <group name="cash" string="Cash">
+                            <field name="manager_cash_open" force_save="1" style="width: 20% !important;"/>
+                            <field name="cash_sales" string="Sales" style="width: 20% !important;"/>
+                            <field name="cash_credit_notes" string="Credit Notes" style="width: 20% !important;"/>
+                            <field name="cash_sales_pedido_ya" string="Sales (Pedido Ya)" style="width: 20% !important;"/>
+                            <field name="cash_credit_notes_pedido_ya" string="Credit Notes (Pedido Ya)" style="width: 20% !important;"/>
+                            <field name="cash_sales_rappi" string="Sales (Rappi)" style="width: 20% !important;"/>
+                            <field name="cash_credit_notes_rappi" string="Credit Notes (Rappi)" style="width: 20% !important;"/>
+                            <field name="sales_other_mostaza" readonly="1" force_save="1" tyle="width: 20% !important;"/>
+                        </group>
+                        <group name="credit_card" string="Credit Card">
+                            <label for="credit_card_sales" string="Sales"/>
+                            <div>
+                                <field name="credit_card_sales_account" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_card_sales" class="oe_inline" />
+                            </div>
+                            <label for="credit_notes_credit_card" string="Credit Notes"/>
+                            <div>    
+                                <field name="credit_notes_credit_card_account" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_notes_credit_card" class="oe_inline" />
+                            </div>
+                            <label for="credit_card_sales_pedido_ya" string="Sales (Pedidos Ya)"/>
+                            <div>
+                                <field name="credit_card_sales_account_pedido_ya" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_card_sales_pedido_ya" class="oe_inline" />
+                            </div>
+                            <label for="credit_notes_pedido_ya" string="Credit Notes (Pedidos Ya)"/>
+                            <div>    
+                                <field name="credit_notes_account_pedido_ya" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_notes_pedido_ya" class="oe_inline" />
+                            </div>
+                            <label for="credit_card_sales_mercado_pago" string="Sales (Mercado Pago)"/>
+                            <div>
+                                <field name="credit_card_sales_account_mercado_pago" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_card_sales_mercado_pago" class="oe_inline" />
+                            </div>
+                            <label for="credit_notes_mercado_pago" string="Credit Notes (Mercado Pago)"/>
+                            <div>    
+                                <field name="credit_notes_account_mercado_pago" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_notes_mercado_pago" class="oe_inline" />
+                            </div>
+                            <label for="credit_card_sales_rappi" string="Sales (Rappi)"/>
+                            <div>
+                                <field name="credit_card_sales_account_rappi" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_card_sales_rappi" class="oe_inline" />
+                            </div>
+                            <label for="credit_notes_rappi" string="Credit Notes (Rappi)"/>
+                            <div>    
+                                <field name="credit_notes_account_rappi" class="oe_inline" />
+                                    &#x2063; &#x2063; &#x2063;
+                                <field name="credit_notes_rappi" class="oe_inline" />
+                            </div>
+                        </group>
+                        <group name="other">
+                            <field name="number_envelopes_mailbox" style="width: 20% !important;"/>
+                            <field name="deposit_mailbox_safe" style="width: 20% !important;"/>
+                            <field name="other_income_expenses" style="width: 20% !important;"/>
+                            <field name="vendor_payment_cash" style="width: 20% !important;"/>
+                            <field name="closing_cash_manager" style="width: 20% !important;"/>
+                        </group>
+                        <group name="manager_cash_differences" string="Manager Cash Difference">
+                            <field name="manager_cash_difference" readonly="1" force_save="1" style="width: 20% !important;"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page for="other_income_expenses_lines" string="Other Income/Expenses">
+                            <group string="Other Income/Expenses" style="width: 30% !important;">
+                            <field name="other_income_expenses_lines" nolabel="1">
+                                <tree string="Line List" editable="bottom">
+                                    <field name="details" string="Details"/>
+                                    <field name="income" string="Income" sum="Total"/>
+                                    <field name="expenses" string="Expenses" sum="Total"/>
+                                </tree>
+                            </field>
+                            </group>
+                            &#x2063; &#x2063; &#x2063;
+                            <group string="Transfers to Liniers" style="width: 30% !important;">
+                            <field name="transfers_liniers_lines" nolabel="1">
+                                <tree string="Line List" editable="bottom">
+                                    <field name="details" string="Details"/>
+                                    <field name="income" string="Income" sum="Total"/>
+                                    <field name="expenses" string="Expenses" sum="Total"/>
+                                </tree>
+                            </field>
+                            </group>
+                            &#x2063; &#x2063; &#x2063;
+                            <group string="Mostaza Purchases and Sales" style="width: 30% !important;">
+                            <field name="purchases_sales_lines" nolabel="1">
+                                <tree string="Line List" editable="bottom">
+                                    <field name="details" string="Details"/>
+                                    <field name="income" string="Income" sum="Total"/>
+                                    <field name="expenses" string="Expenses" sum="Total"/>
+                                </tree>
+                            </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_account_cash_close_search" model="ir.ui.view">
+        <field name="model">account.cash.close</field>
+        <field name="arch" type="xml">
+            <search string="Cash Close">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_account_cash_close_view">
+        <field name="name">Cash Close</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.cash.close</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_account_cash_close_tree"/>
+        <field name="search_view_id" ref="view_account_cash_close_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click to set a new Cash Close.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_account_cash_close" parent="account.menu_finance"
+              name="Cash Close"
+              groups="account.group_account_invoice"
+              action="action_account_cash_close_view"/>
+</odoo>
