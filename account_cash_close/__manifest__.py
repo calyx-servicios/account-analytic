@@ -14,6 +14,7 @@
     'installable': True,
     'depends': ['mail','analytic'],
     'data': [
+        'views/assets.xml',
         'views/account_cash_close_views.xml',
     ],
 }

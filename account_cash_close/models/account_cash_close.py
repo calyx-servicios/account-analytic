@@ -21,21 +21,13 @@ class AccountCashClose(models.Model):
     sales_other_mostaza = fields.Float(string="Sales Other Mostaza", track_visibility="onchange")
     
     credit_card_sales = fields.Float(string="Credit Card Sales", track_visibility="onchange")
-    credit_card_sales_account = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_notes_credit_card = fields.Float(string="Credit Notes Credit Card", track_visibility="onchange")
-    credit_notes_credit_card_account = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_card_sales_pedido_ya = fields.Float(string="Credit Card Sales Pedido Ya", track_visibility="onchange")
-    credit_card_sales_account_pedido_ya = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_notes_pedido_ya = fields.Float(string="Credit Notes Pedido Ya", track_visibility="onchange")
-    credit_notes_account_pedido_ya = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_card_sales_mercado_pago = fields.Float(string="Credit Card Sales Mercado Pago", track_visibility="onchange")
-    credit_card_sales_account_mercado_pago = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_notes_mercado_pago = fields.Float(string="Credit Notes Mercado Pago", track_visibility="onchange")
-    credit_notes_account_mercado_pago = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_card_sales_rappi = fields.Float(string="Credit Card Sales Rappi", track_visibility="onchange")
-    credit_card_sales_account_rappi = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
     credit_notes_rappi = fields.Float(string="Credit Notes Rappi", track_visibility="onchange")
-    credit_notes_account_rappi = fields.Many2one('account.analytic.account', string='Analytic Account', track_visibility="onchange")
 
     number_envelopes_mailbox = fields.Integer(string="Number Of Envelopes to the Mailbox", track_visibility="onchange")
     deposit_mailbox_safe = fields.Float(string="Deposit Mailbox Safe", track_visibility="onchange")
@@ -60,22 +52,22 @@ class AccountCashClose(models.Model):
 
     @api.depends("manager_cash_difference")
     def set_manager_cash_difference(self):
-        total = 0
         for rec in self:
-            total = sum([rec.manager_cash_open,
+            total_positive = sum([rec.manager_cash_open,
                     rec.cash_sales,
-                    rec.cash_credit_notes,
                     rec.cash_sales_pedido_ya,
-                    rec.cash_credit_notes_pedido_ya,
                     rec.cash_sales_rappi,
-                    rec.cash_credit_notes_rappi,
                     rec.sales_other_mostaza,
-                    rec.deposit_mailbox_safe,
                     rec.other_income_expenses,
                     rec.vendor_payment_cash,
-                    rec.closing_cash_manager])
-            rec.manager_cash_difference = total
-            total = 0
+                    ])
+            total_negative = sum([rec.closing_cash_manager,
+                    rec.cash_credit_notes_rappi,
+                    rec.cash_credit_notes_pedido_ya,
+                    rec.cash_credit_notes,
+                    rec.deposit_mailbox_safe,
+                    ])
+            rec.manager_cash_difference = total_positive - total_negative
     
     @api.onchange('date')
     def onchange_date(self):
@@ -88,7 +80,7 @@ class AccountCashClose(models.Model):
         total = 0
         if self.purchases_sales_lines:
             for line in self.purchases_sales_lines:
-                total += line.income + line.expenses
+                total += line.income - line.expenses
             self.sales_other_mostaza = total
 
     @api.onchange('other_income_expenses_lines')
@@ -96,25 +88,25 @@ class AccountCashClose(models.Model):
         total = 0
         if self.other_income_expenses_lines:
             for line in self.other_income_expenses_lines:
-                total += line.income + line.expenses
+                total += line.income - line.expenses
             self.other_income_expenses = total
 
     _sql_constraints = [
         ("cash_uniq","unique(date)",
-        _("You only can have one cash per day"),),
-        ('cash_credit_notes_negative', 'CHECK(cash_credit_notes <= 0)',
+        _("You only can have one cash per day")),
+        ('cash_credit_notes_negative', 'CHECK(1=1)',
          _('Credit Notes must be negative!')),
-        ('cash_credit_notes_pedido_ya_negative', 'CHECK(cash_credit_notes_pedido_ya <= 0)',
+        ('cash_credit_notes_pedido_ya_negative', 'CHECK(1=1)',
          _('Credit Notes (Pedido Ya) must be negative!')),
-        ('cash_credit_notes_rappi_negative', 'CHECK(cash_credit_notes_rappi <= 0)',
+        ('cash_credit_notes_rappi_negative', 'CHECK(1=1)',
          _('Credit Notes (Rappi) must be negative!')),
-        ('credit_notes_credit_card_negative', 'CHECK(credit_notes_credit_card <= 0)',
+        ('credit_notes_credit_card_negative', 'CHECK(1=1)',
          _('Credit Card Credit Notes must be negative!')),
-        ('credit_notes_pedido_ya_negative', 'CHECK(credit_notes_pedido_ya <= 0)',
+        ('credit_notes_pedido_ya_negative', 'CHECK(1=1)',
          _('Credit Card Credit Notes (Pedido Ya) must be negative!')),
-        ('credit_notes_mercado_pago_negative', 'CHECK(credit_notes_mercado_pago <= 0)',
+        ('credit_notes_mercado_pago_negative', 'CHECK(1=1)',
          _('Credit Card Credit Notes (Mercado Pago) must be negative!')),
-        ('credit_notes_rappi_negative', 'CHECK(credit_notes_rappi <= 0)',
+        ('credit_notes_rappi_negative', 'CHECK(1=1)',
          _('Credit Card Credit Notes (Rappi) must be negative!')),
         ('cash_sales_positive', 'CHECK(cash_sales >= 0)',
          _('Cash Sales  must be positive!')),

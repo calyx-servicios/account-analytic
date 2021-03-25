@@ -30,7 +30,7 @@ msgstr "Cuenta analítica"
 #. module: account_cash_close
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Cash"
-msgstr "Caja"
+msgstr "Efectivo"
 
 #. module: account_cash_close
 #: model:ir.actions.act_window,name:account_cash_close.action_account_cash_close_view
