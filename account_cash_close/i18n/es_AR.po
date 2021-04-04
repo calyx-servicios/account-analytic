@@ -28,9 +28,31 @@ msgid "Analytic Account"
 msgstr "Cuenta analítica"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
+msgid "Last Edited"
+msgstr "Última actualización realizada"
+
+#. module: account_cash_close
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Cash"
 msgstr "Efectivo"
+
+#. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
+msgid "Created"
+msgstr "Creado"
+
+#. module: account_cash_close
+#: model:ir.actions.act_window,name:account_cash_close.actions_account_cashbox_account
+#: model:ir.model,name:account_cash_close.model_account_account_cashbox
+#: model:ir.ui.menu,name:account_cash_close.menu_actions_account_cashbox_account
+msgid "Cashbox Accounts"
+msgstr "configuraciones cierre de caja"
+
+#. module: account_cash_close
+#: model:ir.actions.act_window,help:account_cash_close.actions_account_cashbox_account
+msgid "Click here to create a new Cashbox Accounts."
+msgstr "Click para crear un nueva configuracion de cierre de caja"
 
 #. module: account_cash_close
 #: model:ir.actions.act_window,name:account_cash_close.action_account_cash_close_view

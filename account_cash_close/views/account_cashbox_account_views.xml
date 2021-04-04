@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="actions_account_cashbox_account" model="ir.actions.act_window">
+            <field name="name">Cashbox Accounts</field>
+            <field name="res_model">account.account.cashbox</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new Cashbox Accounts.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_account_cashbox_account_tree" model="ir.ui.view">
+            <field name="name">Cashbox Accounts</field>
+            <field name="model">account.account.cashbox</field>
+            <field name="arch" type="xml">
+                <tree string="Cashbox Accounts" create="false">
+                    <field name="create_date" string="Created"/>
+                    <field name="write_date" string="Last Edited"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="menu_actions_account_cashbox_account" action="actions_account_cashbox_account" parent="account.account_account_menu" sequence="5" />
+
+        <record id="action_account_cashbox_account_form" model="ir.ui.view">
+            <field name="name">account.account.cashbox.form</field>
+            <field name="model">account.account.cashbox</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <group name="cashbox_close" string="Close Cashbox">
+                            <group name="cash" col="3" string="Cash">
+                                <field name="cash_sales_account" style="width: 80% !important;" string="Sales"/>
+                                <field name="cash_credit_notes_account" style="width: 80% !important;" string="Credit Notes"/>
+                                <field name="cash_sales_pedido_ya_account" style="width: 80% !important;" string="Sales (Pedido Ya)"/>
+                                <field name="cash_credit_notes_pedido_ya_account" style="width: 80% !important;" string="Credit Notes (Pedido Ya)"/>
+                                <field name="cash_sales_rappi_account" style="width: 80% !important;" string="Sales (Rappi)"/>
+                                <field name="cash_credit_notes_rappi_account" style="width: 80% !important;" string="Credit Notes (Rappi)"/>
+                            </group>
+                            <group name="credit_card" string="Credit Card" col="3">
+                                <field name="credit_card_sales_account" style="width: 80% !important;" string="Sales"/>
+                                <field name="credit_notes_credit_card_account" style="width: 80% !important;" string="Credit Notes"/>
+                                <field name="credit_card_sales_pedido_ya_account" style="width: 80% !important;" string="Sales (Pedidos Ya)"/>
+                                <field name="credit_notes_pedido_ya_account" style="width: 80% !important;" string="Credit Notes (Pedidos Ya)"/>
+                                <field name="credit_card_sales_mercado_pago_account" style="width: 80% !important;" string="Sales (Mercado Pago)"/>
+                                <field name="credit_notes_mercado_pago_account" style="width: 80% !important;" string="Credit Notes (Mercado Pago)"/>
+                                <field name="credit_card_sales_rappi_account" style="width: 80% !important;" string="Sales (Rappi)"/>
+                                <field name="credit_notes_rappi_account" style="width: 80% !important;" string="Credit Notes (Rappi)"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

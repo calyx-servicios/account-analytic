@@ -16,5 +16,6 @@
     'data': [
         'views/assets.xml',
         'views/account_cash_close_views.xml',
+        'views/account_cashbox_account_views.xml',
     ],
 }
