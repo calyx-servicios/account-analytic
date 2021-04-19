@@ -14,10 +14,10 @@
         </record>
 
         <record id="action_account_cashbox_account_tree" model="ir.ui.view">
-            <field name="name">Cashbox Accounts</field>
+            <field name="name">Cashbox Accounts Configuration</field>
             <field name="model">account.account.cashbox</field>
             <field name="arch" type="xml">
-                <tree string="Cashbox Accounts" create="false">
+                <tree create="false">
                     <field name="create_date" string="Created"/>
                     <field name="write_date" string="Last Edited"/>
                 </tree>
@@ -27,7 +27,7 @@
         <menuitem id="menu_actions_account_cashbox_account" action="actions_account_cashbox_account" parent="account.account_account_menu" sequence="5" />
 
         <record id="action_account_cashbox_account_form" model="ir.ui.view">
-            <field name="name">account.account.cashbox.form</field>
+            <field name="name">Cashbox Accounts Configuration</field>
             <field name="model">account.account.cashbox</field>
             <field name="arch" type="xml">
                 <form create="false">
@@ -40,6 +40,7 @@
                                 <field name="cash_credit_notes_pedido_ya_account" style="width: 80% !important;" string="Credit Notes (Pedido Ya)"/>
                                 <field name="cash_sales_rappi_account" style="width: 80% !important;" string="Sales (Rappi)"/>
                                 <field name="cash_credit_notes_rappi_account" style="width: 80% !important;" string="Credit Notes (Rappi)"/>
+                                <field name="other_income_expenses_accounts" style="width: 80% !important;" string="Other Income/Expenses"  widget="many2many_tags"/>
                             </group>
                             <group name="credit_card" string="Credit Card" col="3">
                                 <field name="credit_card_sales_account" style="width: 80% !important;" string="Sales"/>
@@ -50,6 +51,7 @@
                                 <field name="credit_notes_mercado_pago_account" style="width: 80% !important;" string="Credit Notes (Mercado Pago)"/>
                                 <field name="credit_card_sales_rappi_account" style="width: 80% !important;" string="Sales (Rappi)"/>
                                 <field name="credit_notes_rappi_account" style="width: 80% !important;" string="Credit Notes (Rappi)"/>
+                                <field name="cash_out_mercado_pago_account" style="width: 80% !important;" string="Cash out Mercado Pago"/>                            
                             </group>
                         </group>
                     </sheet>

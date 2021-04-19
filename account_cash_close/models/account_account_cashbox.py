@@ -10,6 +10,8 @@ class AccountAccountCashBox(models.Model):
     cash_credit_notes_pedido_ya_account = fields.Many2one(string="Cash Credit Notes Pedido Ya", comodel_name='account.account') 
     cash_sales_rappi_account = fields.Many2one(string="Cash Sales Rappi", comodel_name='account.account') 
     cash_credit_notes_rappi_account = fields.Many2one(string="Cash Credit Notes Rappi", comodel_name='account.account') 
+    transfers_liniers = fields.Many2one(string="Transfers to Liniers", comodel_name='account.account')
+    cash_out_mercado_pago_account = fields.Many2one(string="Cash out Mercado Pago", comodel_name='account.account')
     
     credit_card_sales_account = fields.Many2one(string="Credit Card Sales", comodel_name='account.account') 
     credit_notes_credit_card_account = fields.Many2one(string="Credit Notes Credit Card", comodel_name='account.account') 
@@ -19,3 +21,5 @@ class AccountAccountCashBox(models.Model):
     credit_notes_mercado_pago_account = fields.Many2one(string="Credit Notes Mercado Pago", comodel_name='account.account') 
     credit_card_sales_rappi_account = fields.Many2one(string="Credit Card Sales Rappi", comodel_name='account.account') 
     credit_notes_rappi_account = fields.Many2one(string="Credit Notes Rappi", comodel_name='account.account')
+
+    other_income_expenses_accounts = fields.Many2many(string="Other Income/Expenses", comodel_name='account.account')

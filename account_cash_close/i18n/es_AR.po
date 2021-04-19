@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 14:31+0000\n"
-"PO-Revision-Date: 2021-03-12 14:31+0000\n"
+"POT-Creation-Date: 2021-04-19 14:05+0000\n"
+"PO-Revision-Date: 2021-04-19 14:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,43 +16,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_cash_close
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_account
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_account_mercado_pago
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_account_pedido_ya
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_account_rappi
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_account_mercado_pago
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_account_pedido_ya
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_account_rappi
-#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_credit_card_account
-msgid "Analytic Account"
-msgstr "Cuenta analítica"
+#: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_other_income_expenses_account
+#: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
+msgid "Account"
+msgstr "Cuenta Contable"
 
 #. module: account_cash_close
-#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
-msgid "Last Edited"
-msgstr "Última actualización realizada"
-
-#. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Cash"
 msgstr "Efectivo"
-
-#. module: account_cash_close
-#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
-msgid "Created"
-msgstr "Creado"
-
-#. module: account_cash_close
-#: model:ir.actions.act_window,name:account_cash_close.actions_account_cashbox_account
-#: model:ir.model,name:account_cash_close.model_account_account_cashbox
-#: model:ir.ui.menu,name:account_cash_close.menu_actions_account_cashbox_account
-msgid "Cashbox Accounts"
-msgstr "configuraciones cierre de caja"
-
-#. module: account_cash_close
-#: model:ir.actions.act_window,help:account_cash_close.actions_account_cashbox_account
-msgid "Click here to create a new Cashbox Accounts."
-msgstr "Click para crear un nueva configuracion de cierre de caja"
 
 #. module: account_cash_close
 #: model:ir.actions.act_window,name:account_cash_close.action_account_cash_close_view
@@ -63,55 +36,82 @@ msgid "Cash Close"
 msgstr "Cierre de Caja"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_credit_notes_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_credit_notes
 msgid "Cash Credit Notes"
 msgstr "Notas Credito Efectivo"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_credit_notes_pedido_ya_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_credit_notes_pedido_ya
 msgid "Cash Credit Notes Pedido Ya"
 msgstr "Notas Credito Efectivo Pedido Ya"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_credit_notes_rappi_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_credit_notes_rappi
 msgid "Cash Credit Notes Rappi"
 msgstr "Notas Credito Efectivo Rappi"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_sales_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_sales
 msgid "Cash Sales"
 msgstr "Ventas Efectivo"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:120
+#: code:addons/account_cash_close/models/account_cash_close.py:112
 #, python-format
 msgid "Cash Sales  must be positive!"
 msgstr "Ventas Efectivo deben ser positivas!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:122
+#: code:addons/account_cash_close/models/account_cash_close.py:114
 #, python-format
 msgid "Cash Sales (Pedido Ya) must be positive!"
 msgstr "Ventas Efectivo (Pedido Ya) deben ser positivas!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:124
+#: code:addons/account_cash_close/models/account_cash_close.py:116
 #, python-format
 msgid "Cash Sales (Rappi) must be positive!"
 msgstr "Ventas Efectivo (Rappi) deben ser positivas!"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_sales_pedido_ya_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_sales_pedido_ya
 msgid "Cash Sales Pedido Ya"
 msgstr "Ventas Efectivo Pedido Ya"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_sales_rappi_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_sales_rappi
 msgid "Cash Sales Rappi"
 msgstr "Ventas Efectivo Rappi"
+
+#. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_cash_out_mercado_pago_account
+#: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_cash_out_mercado_pago
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
+#: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
+msgid "Cash out Mercado Pago"
+msgstr "Extracciones Mercado Pago"
+
+#. module: account_cash_close
+#: model:ir.actions.act_window,name:account_cash_close.actions_account_cashbox_account
+#: model:ir.model,name:account_cash_close.model_account_account_cashbox
+#: model:ir.ui.menu,name:account_cash_close.menu_actions_account_cashbox_account
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
+msgid "Cashbox Accounts"
+msgstr "Cierre de Caja"
+
+#. module: account_cash_close
+#: model:ir.actions.act_window,help:account_cash_close.actions_account_cashbox_account
+msgid "Click here to create a new Cashbox Accounts."
+msgstr "Click para crear una nueva configuracion de cierre de caja"
 
 #. module: account_cash_close
 #: model:ir.actions.act_window,help:account_cash_close.action_account_cash_close_view
@@ -124,11 +124,22 @@ msgid "Close Cash"
 msgstr "Cierre de Caja"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
+msgid "Close Cashbox"
+msgstr "Cierre de Caja"
+
+#. module: account_cash_close
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_closing_cash_manager
 msgid "Closing Cash Manager"
 msgstr "Cierre de Caja Gerente"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
+msgid "Created"
+msgstr "Creado"
+
+#. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_create_uid
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_create_uid
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_create_uid
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales_create_uid
@@ -137,6 +148,7 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_create_date
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_create_date
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_create_date
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales_create_date
@@ -145,148 +157,162 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Credit Card"
 msgstr "Tarjeta"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:116
+#: code:addons/account_cash_close/models/account_cash_close.py:108
 #, python-format
 msgid "Credit Card Credit Notes (Mercado Pago) must be negative!"
 msgstr "Notas Credito Tarjeta (Mercado Pago) tiene que ser negativo!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:114
+#: code:addons/account_cash_close/models/account_cash_close.py:106
 #, python-format
 msgid "Credit Card Credit Notes (Pedido Ya) must be negative!"
 msgstr "Notas Creidito Tarjeta (Pedido Ya) tiene que ser negativo!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:118
+#: code:addons/account_cash_close/models/account_cash_close.py:110
 #, python-format
 msgid "Credit Card Credit Notes (Rappi) must be negative!"
 msgstr "Notas Credito Tarjeta (Rappi) tiene que ser negativo!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:112
+#: code:addons/account_cash_close/models/account_cash_close.py:104
 #, python-format
 msgid "Credit Card Credit Notes must be negative!"
 msgstr "Notas Credito Tarjeta tiene que ser negativo!"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_card_sales_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales
 msgid "Credit Card Sales"
 msgstr "Ventas Tarjeta"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_card_sales_mercado_pago_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_mercado_pago
 msgid "Credit Card Sales Mercado Pago"
 msgstr "Ventas Tarjeta Mercado Pago"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_card_sales_pedido_ya_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_pedido_ya
 msgid "Credit Card Sales Pedido Ya"
 msgstr "Ventas Tarjeta Pedido Ya"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_card_sales_rappi_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_card_sales_rappi
 msgid "Credit Card Sales Rappi"
 msgstr "Ventas Tarjeta Rappi"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:126
+#: code:addons/account_cash_close/models/account_cash_close.py:118
 #, python-format
 msgid "Credit Cards Sales  must be positive!"
 msgstr "Ventas Tarjeta deben ser positivas!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:130
+#: code:addons/account_cash_close/models/account_cash_close.py:122
 #, python-format
 msgid "Credit Cards Sales (Mercado Pago) must be positive!"
 msgstr "Ventas Tarjeta (Mercado Pago) deben ser positivas!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:128
+#: code:addons/account_cash_close/models/account_cash_close.py:120
 #, python-format
 msgid "Credit Cards Sales (Pedido Ya) must be positive!"
 msgstr "Ventas Tarjeta (Pedido Ya) deben ser positivas!"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:132
+#: code:addons/account_cash_close/models/account_cash_close.py:124
 #, python-format
 msgid "Credit Cards Sales (Rappi) must be positive!"
 msgstr "Ventas Tarjeta (Rappi) deben ser positivas!"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Credit Notes"
 msgstr "Rectificativas"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Credit Notes (Mercado Pago)"
 msgstr "Notas Credito (Mercado Pago)"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Credit Notes (Pedido Ya)"
 msgstr "Notas Credito (Pedido Ya)"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:108
+#: code:addons/account_cash_close/models/account_cash_close.py:100
 #, python-format
 msgid "Credit Notes (Pedido Ya) must be negative!"
 msgstr "Notas Credito (Pedido Ya) deben ser negativos!"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Credit Notes (Pedidos Ya)"
 msgstr "Notas Credito (Pedidos Ya)"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Credit Notes (Rappi)"
 msgstr "Notas Credito (Rappi)"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:110
+#: code:addons/account_cash_close/models/account_cash_close.py:102
 #, python-format
 msgid "Credit Notes (Rappi) must be negative!"
 msgstr "Notas Credito (Rappi) deben ser negativos!"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_notes_credit_card_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_credit_card
 msgid "Credit Notes Credit Card"
 msgstr "Notas Credito Tarjeta"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_notes_mercado_pago_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_mercado_pago
 msgid "Credit Notes Mercado Pago"
 msgstr "Notas Credito Mercado Pago"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_notes_pedido_ya_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_pedido_ya
 msgid "Credit Notes Pedido Ya"
 msgstr "Notas Credito Pedido Ya"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_credit_notes_rappi_account
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_credit_notes_rappi
 msgid "Credit Notes Rappi"
 msgstr "Notas Credito Rappi"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:106
+#: code:addons/account_cash_close/models/account_cash_close.py:98
 #, python-format
 msgid "Credit Notes must be negative!"
 msgstr "Notas Credito debe ser negativo!"
@@ -311,17 +337,13 @@ msgid "Details"
 msgstr "Detalles"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_display_name
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_display_name
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_display_name
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales_display_name
 #: model:ir.model.fields,field_description:account_cash_close.field_account_transfers_liniers_display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
-
-#. module: account_cash_close
-#: model:ir.model,name:account_cash_close.model_mail_followers
-msgid "Document Followers"
-msgstr "Seguidores del documento"
 
 #. module: account_cash_close
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_expenses
@@ -332,6 +354,7 @@ msgid "Expenses"
 msgstr "Gastos"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_id
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_id
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_id
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales_id
@@ -354,6 +377,12 @@ msgid "Income/Expenses"
 msgstr "Ingreso/Gastos"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_tree
+msgid "Last Edited"
+msgstr "Última actualización realizada"
+
+#. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox___last_update
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close___last_update
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses___last_update
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales___last_update
@@ -362,6 +391,7 @@ msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_write_uid
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_write_uid
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_write_uid
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales_write_uid
@@ -370,6 +400,7 @@ msgid "Last Updated by"
 msgstr "Última actualización realizada por"
 
 #. module: account_cash_close
+#: model:ir.model.fields,field_description:account_cash_close.field_account_account_cashbox_write_date
 #: model:ir.model.fields,field_description:account_cash_close.field_account_cash_close_write_date
 #: model:ir.model.fields,field_description:account_cash_close.field_account_income_expenses_write_date
 #: model:ir.model.fields,field_description:account_cash_close.field_account_purchases_sales_write_date
@@ -435,26 +466,31 @@ msgid "Purchases Sales Lines"
 msgstr "Compras/Ventas lineas"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Sales"
 msgstr "Ventas"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Sales (Mercado Pago)"
 msgstr "Ventas (Mercado Pago)"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Sales (Pedido Ya)"
 msgstr "Ventas (Pedido Ya)"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Sales (Pedidos Ya)"
 msgstr "Ventas (Pedidos Ya)"
 
 #. module: account_cash_close
+#: model:ir.ui.view,arch_db:account_cash_close.action_account_cashbox_account_form
 #: model:ir.ui.view,arch_db:account_cash_close.view_account_cash_close_form
 msgid "Sales (Rappi)"
 msgstr "Ventas (Rappi)"
@@ -493,7 +529,7 @@ msgstr "Pagos de Proveedores en Efectivo"
 
 #. module: account_cash_close
 #: sql_constraint:account.cash.close:0
-#: code:addons/account_cash_close/models/account_cash_close.py:104
+#: code:addons/account_cash_close/models/account_cash_close.py:96
 #, python-format
 msgid "You only can have one cash per day"
 msgstr "Solo puede haber una caja por dia"

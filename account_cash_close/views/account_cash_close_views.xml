@@ -41,11 +41,13 @@
                             <field name="credit_notes_mercado_pago" string="Credit Notes (Mercado Pago)" style="width: 20% !important;" class="negative_red"/>
                             <field name="credit_card_sales_rappi" string="Sales (Rappi)" style="width: 20% !important;" class="positive_green"/>
                             <field name="credit_notes_rappi" string="Credit Notes (Rappi)" style="width: 20% !important;" class="negative_red"/>
+                            <field name="cash_out_mercado_pago" string="Cash out Mercado Pago" style="width: 20% !important;" class="negative_red"/>                        
                         </group>
                         <group name="other" class="group_color">
                             <field name="number_envelopes_mailbox" style="width: 20% !important;"/>
                             <field name="deposit_mailbox_safe" style="width: 20% !important;" class="negative_red"/>
                             <field name="other_income_expenses" style="width: 20% !important;" readonly="1" force_save="1"/>
+                            <field name="transfers_liniers" string="Tranfers Liniers" readonly="1" force_save="1" style="width: 20% !important;"/>
                             <field name="vendor_payment_cash" style="width: 20% !important;"/>
                             <field name="closing_cash_manager" style="width: 20% !important;" class="negative_red"/>
                         </group>
@@ -59,6 +61,7 @@
                             <field name="other_income_expenses_lines" nolabel="1">
                                 <tree string="Line List" editable="bottom">
                                     <field name="details" string="Details"/>
+                                    <field name="other_income_expenses_account" string="Account"/>
                                     <field name="income" string="Income" sum="Total"/>
                                     <field name="expenses" string="Expenses" sum="Total"/>
                                 </tree>

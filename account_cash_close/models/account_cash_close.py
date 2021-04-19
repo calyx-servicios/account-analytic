@@ -28,10 +28,12 @@ class AccountCashClose(models.Model):
     credit_notes_mercado_pago = fields.Float(string="Credit Notes Mercado Pago", track_visibility="onchange")
     credit_card_sales_rappi = fields.Float(string="Credit Card Sales Rappi", track_visibility="onchange")
     credit_notes_rappi = fields.Float(string="Credit Notes Rappi", track_visibility="onchange")
+    cash_out_mercado_pago = fields.Float(string="Cash out Mercado Pago", track_visibility="onchange")
 
     number_envelopes_mailbox = fields.Integer(string="Number Of Envelopes to the Mailbox", track_visibility="onchange")
     deposit_mailbox_safe = fields.Float(string="Deposit Mailbox Safe", track_visibility="onchange")
     other_income_expenses = fields.Float(string="Other Income / Expenses", track_visibility="onchange")
+    transfers_liniers = fields.Float(string="Tranfers Liniers", track_visibility="onchange")
     vendor_payment_cash = fields.Float(string="Vendor Payment in Cash", track_visibility="onchange")
     closing_cash_manager = fields.Float(string="Closing Cash Manager", track_visibility="onchange")
     
@@ -60,12 +62,14 @@ class AccountCashClose(models.Model):
                     rec.sales_other_mostaza,
                     rec.other_income_expenses,
                     rec.vendor_payment_cash,
+                    rec.transfers_liniers,
                     ])
             total_negative = sum([rec.closing_cash_manager,
                     rec.cash_credit_notes_rappi,
                     rec.cash_credit_notes_pedido_ya,
                     rec.cash_credit_notes,
                     rec.deposit_mailbox_safe,
+                    rec.cash_out_mercado_pago,
                     ])
             rec.manager_cash_difference = total_positive - total_negative
     
@@ -74,7 +78,6 @@ class AccountCashClose(models.Model):
         if self.date:
             self.name = "Caja " + self.date.replace('-','/')
 
-
     @api.onchange('purchases_sales_lines')
     def onchange_purchases_sales_lines(self):
         total = 0
@@ -82,6 +85,14 @@ class AccountCashClose(models.Model):
             for line in self.purchases_sales_lines:
                 total += line.income - line.expenses
             self.sales_other_mostaza = total
+
+    @api.onchange('transfers_liniers_lines')
+    def onchange_transfers_liniers_lines(self):
+        total = 0
+        if self.transfers_liniers_lines:
+            for line in self.transfers_liniers_lines:
+                total += line.income - line.expenses
+            self.transfers_liniers = total
 
     @api.onchange('other_income_expenses_lines')
     def onchange_other_income_expenses_lines(self):
